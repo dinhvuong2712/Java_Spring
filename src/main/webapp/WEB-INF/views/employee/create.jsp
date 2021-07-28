@@ -30,13 +30,13 @@
                                 Gender
                             </label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="Gender" value="True" id="flexRadioDefault1" checked>
+                                <input class="form-check-input" type="radio" name="Gender" value="true" id="flexRadioDefault1" checked>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Male
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="Gender" value="False" id="flexRadioDefault2" >
+                                <input class="form-check-input" type="radio" name="Gender" value="false" id="flexRadioDefault2" >
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Female
                                 </label>

@@ -1,6 +1,7 @@
 package Demo.Service;
 
 import Demo.Model.Customer;
+import Demo.ViewModel.EmployeeViewModel;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -10,17 +11,17 @@ import java.util.List;
 @Component("CustomerService")
 public class CustomerService extends BaseService implements ICustomer {
     @Override
-    public List<Customer> getAll() {
+    public List<EmployeeViewModel> getAll() {
         return null;
     }
 
     @Override
-    public Customer getByID(String id) {
+    public EmployeeViewModel getByID(String id) {
         return null;
     }
 
     @Override
-    public List<Customer> getByKeyWord(String keyWord) {
+    public List<EmployeeViewModel> getByKeyWord(String keyWord) {
         return null;
     }
 

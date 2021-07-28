@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<h3 class="text-secondary">Employee</h3>
 <p>
     <a class="btn btn-sm btn-success" href="/employee/add">Them nhan vien</a>
 </p>

@@ -2,12 +2,12 @@ package Demo.Service;
 
 import java.util.List;
 
-public interface ICommonService<T> {
-    public List<T> getAll();
+public interface ICommonService<T,E> {
+    public List<E> getAll();
 
-    public T getByID(String id);
+    public E getByID(String id);
 
-    public List<T> getByKeyWord(String keyWord);
+    public List<E> getByKeyWord(String keyWord);
 
     public boolean add(T info);
 

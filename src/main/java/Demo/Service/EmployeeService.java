@@ -1,6 +1,7 @@
 package Demo.Service;
 
 import Demo.Model.Employee;
+import Demo.ViewModel.EmployeeViewModel;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +15,8 @@ import java.util.List;
 public class EmployeeService extends BaseService implements IEmployee{
 
     @Override
-    public List<Employee> getAll() {
-        List<Employee> employees = new ArrayList<>();
+    public List<EmployeeViewModel> getAll() {
+        List<EmployeeViewModel> employees = new ArrayList<>();
 
         query = "execute SP_Employee_Select_All";
 
@@ -39,8 +40,8 @@ public class EmployeeService extends BaseService implements IEmployee{
     }
 
     @Override
-    public Employee getByID(String id) {
-        Employee employee = new Employee();
+    public EmployeeViewModel getByID(String id) {
+        EmployeeViewModel employee = new EmployeeViewModel();
         InitInfor infor = new InitInfor();
 
         query = "execute SP_Employee_Select_SingeById " + id;
@@ -63,7 +64,7 @@ public class EmployeeService extends BaseService implements IEmployee{
     }
 
     @Override
-    public List<Employee> getByKeyWord(String keyWord) {
+    public List<EmployeeViewModel> getByKeyWord(String keyWord) {
         return null;
     }
 

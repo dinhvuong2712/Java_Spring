@@ -1,18 +1,19 @@
 package Demo.Service;
 
 import Demo.Model.Customer;
+import Demo.ViewModel.EmployeeViewModel;
 
 import java.util.List;
 
-public interface ICustomer extends ICommonService<Customer>{
+public interface ICustomer extends ICommonService<Customer, EmployeeViewModel>{
     @Override
-    List<Customer> getAll();
+    List<EmployeeViewModel> getAll();
 
     @Override
-    Customer getByID(String id);
+    EmployeeViewModel getByID(String id);
 
     @Override
-    List<Customer> getByKeyWord(String keyWord);
+    List<EmployeeViewModel> getByKeyWord(String keyWord);
 
     @Override
     boolean add(Customer info);

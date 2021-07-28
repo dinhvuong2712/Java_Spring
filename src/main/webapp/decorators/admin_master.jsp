@@ -27,7 +27,7 @@
 
 <%-- Menu bar --%>
 
-<jsp:include page="/common/admin/menu_bar.jsp"/>
+<jsp:include page="/common/admin/top_bar.jsp"/>
 
 <%-- End Menu bar --%>
 
