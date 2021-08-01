@@ -15,7 +15,7 @@ function localData() {
                     '<tr>' +
                         '<td>' + e.Id_emp + '</td>' +
                         '<td>' + e.Name + '</td>' +
-                        '<td>' + e.viewGender + '</td>' +
+                        '<td>' + getGender(e.Gender) + '</td>' +
                         '<td>' + e.Address + '</td>' +
                         '<td>' + e.PhoneNumber + '</td>' +
                         '<td>' + e.viewBirth + '</td>' +
