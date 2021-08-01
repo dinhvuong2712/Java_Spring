@@ -11,16 +11,6 @@ function localData() {
         success: function (data) {
             var html = "";
             $.each(data, function (i, e) {
-                // var gender = JSON.stringify(e.Gender) === "true" ? "Nữ" : "Nam";
-                // var birth = new Date(e.Birth);
-                // function formatDate(date) {
-                //     var day = date.getDate();
-                //     day = day < 10 ? "0"+day : day;
-                //     var month = date.getMonth() + 1;
-                //     month = month < 10 ? "0"+month : month;
-                //     var year = date.getFullYear();
-                //     return day + "/" + month + "/" + year;
-                // }
                 html +=
                     '<tr>' +
                         '<td>' + e.Id_emp + '</td>' +
