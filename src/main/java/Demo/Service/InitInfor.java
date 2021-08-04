@@ -19,7 +19,8 @@ public class InitInfor {
             emp.setCreated_date(resultSet.getString("Created_date"));
             emp.setUpdated_date(resultSet.getString("Updated_date"));
 
-            emp.setViewGender(resultSet.getBoolean("Gender"));
+            emp.setGender(resultSet.getBoolean("Gender"));
+            emp.setBirth(resultSet.getDate("Birth"));
             emp.setViewBirth(resultSet.getDate("Birth"));
         } catch (Exception ex) {
             ex.printStackTrace();

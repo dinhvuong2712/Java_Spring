@@ -1,6 +1,7 @@
 $(document).ready(function () {
+
     $("#addConfirm").click(function () {
-        add();
+        //add();
     });
 });
 
@@ -8,7 +9,7 @@ function add() {
     $.ajax({
         type: 'POST',
         dataType: 'JSON',
-        url: '/employee/addConfirmed',
+        url: '/employee/addConfirmed/',
         data: {
             Name: $('#Name').val(),
             Gender: $('#Gender').val(),
@@ -18,9 +19,8 @@ function add() {
             Email: $('#Email').val()
         },
         success: function (data) {
-            confirm("success");
-            if (data == "ok") {
-                window.location.assign("/emloyee/index");
+            if(result == "ok"){
+                location.replace('/employee/index');
             }
         }
     });

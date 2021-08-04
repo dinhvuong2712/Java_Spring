@@ -17,16 +17,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
-import static java.lang.Boolean.parseBoolean;
 
 
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
     String dir = "employee/";
-//    @Autowired
-//    IEmployee iEmployee;
-    private IEmployee iEmployee;
+
+    private final IEmployee iEmployee;
 
     public EmployeeController() {
         iEmployee = new EmployeeService();
@@ -34,9 +32,8 @@ public class EmployeeController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView(dir + "index");
 
-        return modelAndView;
+        return new ModelAndView(dir + "index");
     }
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
@@ -48,9 +45,8 @@ public class EmployeeController {
     @RequestMapping(value = "/infor", method = RequestMethod.GET)
     public ModelAndView infor(@RequestParam String id) {
         getById(id);
-        ModelAndView modelAndView = new ModelAndView(dir + "detailEmp");
 
-        return modelAndView;
+        return new ModelAndView(dir + "detailEmp");
     }
 
     @RequestMapping(value = "/getInfor", method = RequestMethod.GET)
@@ -61,22 +57,20 @@ public class EmployeeController {
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public ModelAndView add() {
-        ModelAndView modelAndView = new ModelAndView(dir + "create");
 
-        return modelAndView;
+        return new ModelAndView(dir + "create");
     }
 
     @RequestMapping(value = "/addConfirmed", method = RequestMethod.POST)
     @Produces("application/json")
     @ResponseBody
-    public ModelAndView addConfirm(HttpServletRequest request) {
+    public ModelAndView addConfirmed(HttpServletRequest request) {
         if (!iEmployee.add(initEmployee(request))) {
             return new ModelAndView("redirect:/employee/add");
         }
         return new ModelAndView("redirect:/employee/index");
     }
 
-    @Produces("application/json")
     private Employee initEmployee(HttpServletRequest request) {
         Employee emp = new Employee();
 
@@ -97,11 +91,29 @@ public class EmployeeController {
         return emp;
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public ModelAndView addConfirm(@RequestParam String id) {
-        if (!iEmployee.delete(id)) {
-            return new ModelAndView("redirect:/" +dir + "create");
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public ModelAndView update(@RequestParam String id) {
+        ModelAndView modelAndView = new ModelAndView(dir + "update");
+
+        return modelAndView.addObject("item",iEmployee.getByID(id));
+    }
+
+    @RequestMapping(value = "/updateConfirmed", method = RequestMethod.PUT)
+    @ResponseBody
+    public ModelAndView updateConfirmed(HttpServletRequest request) {
+        ModelAndView modelAndView = new ModelAndView("redirect:/employee/update");
+        if (!iEmployee.update(initEmployee(request))) {
+            return modelAndView.addObject("message","false");
         }
-        return new ModelAndView("redirect:/" +dir + "index");
+        return modelAndView.addObject("message","true");
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public ModelAndView delete(@RequestParam String id) {
+        ModelAndView modelAndView = new ModelAndView("redirect:/" +dir + "index");
+        if (!iEmployee.delete(id)) {
+            return modelAndView.addObject("message","error");
+        }
+        return modelAndView.addObject("message","success");
     }
 }

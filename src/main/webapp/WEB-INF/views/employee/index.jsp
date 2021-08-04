@@ -5,7 +5,7 @@
 <p>
     <a class="btn btn-sm btn-success" href="/employee/add">Them nhan vien</a>
 </p>
-
+<script src="<c:url value="/resources/js/employee/index.js"/>"></script>
 <div class="dataTable-wrapper shadow-sm p-3 mb-5 bg-white rounded">
     <div class="dataTable-container">
         <table id="employee-all" class="table table-sm table-hover table-striped">
@@ -28,4 +28,3 @@
     </div>
 </div>
 
-<script src="<c:url value="/resources/js/employee/index.js"/>"></script>

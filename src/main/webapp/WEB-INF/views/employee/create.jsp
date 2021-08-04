@@ -22,7 +22,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="small mb-1" for="Birth">Birth</label>
-                                <input class="form-control py-2" name="Birth" id="Birth" type="date" aria-describedby="dateHelp" placeholder="dd/MM/yyyy">
+                                <input class="form-control date-default py-2" name="Birth" id="Birth" type="date" aria-describedby="dateHelp" placeholder="dd/MM/yyyy">
                             </div>
                         </div><div class="col-md-6">
                         <div class="form-group">
@@ -63,5 +63,5 @@
     </div>
 </div>
 
-<script src="<c:url value="/resources/js/employee/addConfirm.js"/>"></script>
+<%--<script src="<c:url value="/resources/js/employee/addConfirm.js"/>"></script>--%>
 

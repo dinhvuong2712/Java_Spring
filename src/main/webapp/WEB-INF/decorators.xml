@@ -2,8 +2,7 @@
 <decorators defaultdir="/decorators">
     <decorator name="admin" page="admin_master.jsp">
         <pattern>/home/index</pattern>
-        <pattern>/employee/index</pattern>
-        <pattern>/employee/infor</pattern>
-        <pattern>/employee/add</pattern>
+        <pattern>/employee/*</pattern>
+        <pattern>/employee/update</pattern>
     </decorator>
 </decorators>
