@@ -1,7 +1,7 @@
 $(document).ready(function (){
     var gender = $('#flexRadioDefault1').attr('data-gender');
     checked(gender);
-    $('#Birth').val($('#Birth').val().toString().replace('/','-').toString());
+    $('#Birth').val($('#Birth').val().toString().replaceAll('/','-').toString());
     $("#updateConfirm").click(function () {
         // editConfirm();
     });

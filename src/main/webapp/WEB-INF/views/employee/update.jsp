@@ -30,7 +30,7 @@
     </div>
     <div class="col-lg-10">
         <div class="card shadow-lg border-0 rounded-lg mt-5">
-            <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+            <div class="card-header"><h3 class="text-center font-weight-light my-4">Update Account</h3></div>
             <div class="card-body">
                 <form id="target" method="post" action="/employee/updateConfirmed">
                     <div class="form-group">
@@ -85,7 +85,7 @@
                                aria-describedby="emailHelp" placeholder="Enter email address">
                     </div>
                     <div class="form-group mt-4 mb-0">
-                        <button type="submit" id="updateConfirm" class="btn btn-primary btn-block">Create Account</button>
+                        <button type="submit" id="updateConfirm" class="btn btn-primary btn-block">Update Account</button>
                     </div>
                 </form>
             </div>

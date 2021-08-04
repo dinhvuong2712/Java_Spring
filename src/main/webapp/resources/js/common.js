@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    $('.date-default').val(getDateCurrent());
+    $('.date-default').val(getDateCurrent().toString().replaceAll('/','-').toString());
 })
+
 
 function getDateCurrent(){
     var date = new Date(),
