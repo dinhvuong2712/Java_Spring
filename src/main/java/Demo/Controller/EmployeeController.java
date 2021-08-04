@@ -74,6 +74,7 @@ public class EmployeeController {
     private Employee initEmployee(HttpServletRequest request) {
         Employee emp = new Employee();
 
+        emp.setId_emp(Integer.parseInt(request.getParameter("Id_emp")));
         emp.setName(request.getParameter("Name"));
         emp.setGender(Boolean.parseBoolean(request.getParameter("Gender")));
         try {
@@ -92,16 +93,17 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
-    public ModelAndView update(@RequestParam String id) {
+    public ModelAndView update(@RequestParam(name = "id") String id) {
         ModelAndView modelAndView = new ModelAndView(dir + "update");
 
         return modelAndView.addObject("item",iEmployee.getByID(id));
     }
 
-    @RequestMapping(value = "/updateConfirmed", method = RequestMethod.PUT)
+    @RequestMapping(value = "/updateConfirmed", method = RequestMethod.POST)
     @ResponseBody
     public ModelAndView updateConfirmed(HttpServletRequest request) {
-        ModelAndView modelAndView = new ModelAndView("redirect:/employee/update");
+        System.out.println("ok");
+        ModelAndView modelAndView = new ModelAndView("redirect:/employee/update?id="+request.getParameter("Id_emp"));
         if (!iEmployee.update(initEmployee(request))) {
             return modelAndView.addObject("message","false");
         }

@@ -3,13 +3,13 @@ $(document).ready(function (){
     checked(gender);
     $('#Birth').val($('#Birth').val().toString().replace('/','-').toString());
     $("#updateConfirm").click(function () {
-        editConfirm();
+        // editConfirm();
     });
 });
 
 function editConfirm(){
     $.ajax({
-        type: 'PUT',
+        type: 'POST',
         dataType: 'JSON',
         url: '/employee/updateConfirmed',
         data: {
@@ -27,10 +27,16 @@ function editConfirm(){
         }
     });
 }
-
+function message(mess){
+    var url = $(location).href.split('message=');
+    if(Boolean(url)){
+        $("#exampleModal").attr("aria-hidden","false");
+        $("#exampleModal").css("display","block !important");
+    }
+}
 function checked(gender){
     if(gender){
-        return $('#flexRadioDefault1').checked;
+        return $('#flexRadioDefault1').checked(true);
     }
-    return $('#flexRadioDefault2').checked;
+    return $('#flexRadioDefault2').checked(true);
 }

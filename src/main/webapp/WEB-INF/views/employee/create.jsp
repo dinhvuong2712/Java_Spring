@@ -16,6 +16,7 @@
                 <form id="target" method="post" action="/employee/addConfirmed">
                     <div class="form-group">
                         <label class="small mb-1" for="Name">Full Name</label>
+                        <input type="hidden" name="Id_emp" value="0">
                         <input class="form-control py-2" name="Name" id="Name" type="text" aria-describedby="nameHelp" placeholder="Enter full name">
                     </div>
                     <div class="form-group row">
